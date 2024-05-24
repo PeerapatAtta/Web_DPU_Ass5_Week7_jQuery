@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise #1 </title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .textDisplayArea {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        label {
+                    margin-bottom: 5px;
+        }
+        input[type="color"],
+        input[type="number"] {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="textDisplayArea">jQuery is easy.</div><br><br>
+    <label for="bgColorInput">Set Background Color:</label>
+    <input type="color" id="bgColorInput" value="#ffffff">
+    <br>
+    <label for="textColorInput">Set Text Color:</label>
+    <input type="color" id="textColorInput" value="#000000">
+    <br>
+    <label for="textSizeInput">Set Text Size (px):</label>
+    <input type="number" id="textSizeInput" value="16">
+    <br>
+    <button id="setStyleButton">Set Style</button>
+ 
+
+    <script>
+        $(document).ready(function(){
+            $('#setStyleButton').click(function(){
+                var bgColor = $('#bgColorInput').val();
+                var textColor = $('#textColorInput').val();
+                var textSize = $('#textSizeInput').val() + 'px';
+                
+                $('.textDisplayArea').css({
+                    'background-color': bgColor,
+                    'color': textColor,
+                    'font-size': textSize
+                });
+            });
+        });
+    </script>
+</body>
+</html>

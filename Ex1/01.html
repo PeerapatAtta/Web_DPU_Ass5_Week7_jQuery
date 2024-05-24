@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Style Changer</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="textDisplayArea">This is some sample text.</div>
+    <input type="color" id="bgColorInput" value="#ffffff">
+    <input type="color" id="textColorInput" value="#000000">
+    <input type="number" id="textSizeInput" value="16">
+    <button id="setStyleButton">Set Style</button>
+
+    <script>
+        $(document).ready(function(){
+            $('#setStyleButton').click(function(){
+                var bgColor = $('#bgColorInput').val();
+                var textColor = $('#textColorInput').val();
+                var textSize = $('#textSizeInput').val() + 'px';
+                
+                $('.textDisplayArea').css({
+                    'background-color': bgColor,
+                    'color': textColor,
+                    'font-size': textSize
+                });
+            });
+        });
+    </script>
+</body>
+</html>
